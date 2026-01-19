@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useRef, CSSProperties } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Link from 'next/link';
 import { Instagram, MapPin, Phone, Clock, Brush } from 'lucide-react';
 
@@ -189,7 +189,6 @@ export default function Footer() {
                 <span className="font-light hover:text-white transition-colors">+91 86304 07452</span>
               </li>
               
-
               <li className="flex items-start gap-4 text-stone-300 pt-4 border-t border-stone-800 mt-4">
                 <Clock className="w-5 h-5 text-stone-500 shrink-0 mt-1" />
                 <div className="text-sm text-stone-500">
@@ -201,10 +200,22 @@ export default function Footer() {
           </div>
         </div>
 
+        {/* --- PROFESSIONAL ENGLISH LINK --- */}
         <div className="border-t border-stone-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-stone-500 font-light tracking-wide">
           <p>&copy; 2026 Beauty Box by Geeta. All rights reserved.</p>
-          <p>Designed with <span className="text-[#D4A373]">♥</span> for Luxury.</p>
+          <p>
+            Designed by{' '}
+            <a 
+              href="https://wa.me/917889709840?text=Hi%20Mohammad!%20I%20saw%20the%20Beauty%20Box%20website.%20I%20am%20interested%20in%20getting%20a%20website%20developed." 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-[#D4A373] font-medium hover:text-white hover:underline transition-colors cursor-pointer ml-1"
+            >
+              Mohammad
+            </a>
+          </p>
         </div>
+        
       </div>
     </footer>
   );
