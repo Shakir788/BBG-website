@@ -1,11 +1,11 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState, useRef, CSSProperties } from 'react';
 import Link from 'next/link';
-import { Instagram, MapPin, Phone, Clock, Brush } from 'lucide-react'; // Facebook aur Mail hata diya
+import { Instagram, MapPin, Phone, Clock, Brush } from 'lucide-react';
 
 export default function Footer() {
-  const footerRef = useRef(null);
+  const footerRef = useRef<HTMLElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   // Scroll Detection Logic
@@ -31,7 +31,7 @@ export default function Footer() {
   return (
     <footer ref={footerRef} className="relative bg-[#12100E] text-[#F4F1EA] border-t border-[#D4A373]/20 pt-32 pb-10 overflow-hidden">
       
-      {/* ==================== ANIMATION ZONE (UNCHANGED) ==================== */}
+      {/* ==================== ANIMATION ZONE ==================== */}
       
       {/* 1. BRUSH DROP ANIMATION */}
       <div 
@@ -51,6 +51,8 @@ export default function Footer() {
       {/* 2. DUST EXPLOSION */}
       {isVisible && (
         <div className="absolute top-10 left-1/2 -translate-x-1/2 w-full h-40 pointer-events-none z-10 flex justify-center">
+           {/* TypeScript Ignore for Styled JSX */}
+           {/* @ts-ignore */}
            <style jsx>{`
               @keyframes puff {
                 0% { transform: translate(0, 0) scale(0.5); opacity: 1; }
@@ -91,10 +93,12 @@ export default function Footer() {
                    width: `${Math.random() * 8 + 4}px`,
                    height: `${Math.random() * 8 + 4}px`,
                    top: '10px', 
+                   // @ts-ignore
                    '--x': `${x}px`,
+                   // @ts-ignore
                    '--y': `${y - 50}px`, 
                    animationDelay: '0.9s' 
-                 }}
+                 } as any}
                />
              );
            })}
@@ -140,7 +144,6 @@ export default function Footer() {
               <Link href="https://instagram.com/beautyboxbygeeta" target="_blank" className="w-10 h-10 rounded-full border border-stone-700 flex items-center justify-center hover:bg-[#D4A373] hover:border-[#D4A373] hover:text-stone-900 transition-all duration-300">
                 <Instagram className="w-5 h-5" />
               </Link>
-              {/* Facebook Hata diya gaya hai */}
             </div>
           </div>
 
@@ -186,7 +189,6 @@ export default function Footer() {
                 <span className="font-light hover:text-white transition-colors">+91 86304 07452</span>
               </li>
               
-              {/* Email remove kar diya gaya hai */}
 
               <li className="flex items-start gap-4 text-stone-300 pt-4 border-t border-stone-800 mt-4">
                 <Clock className="w-5 h-5 text-stone-500 shrink-0 mt-1" />
