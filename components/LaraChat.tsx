@@ -71,7 +71,7 @@ export default function LaraChat() {
               <div>
                 <h3 className="font-serif text-xl text-[#F4F1EA] tracking-wide">LARA</h3>
                 <p className="text-[10px] text-[#D4A373] uppercase tracking-widest font-bold flex items-center gap-1">
-                  <Sparkles className="w-3 h-3" /> AI Assistant
+                  <Sparkles className="w-3 h-3" /> Receptionist
                 </p>
               </div>
             </div>
